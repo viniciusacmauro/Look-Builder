@@ -203,6 +203,15 @@
 
     }
 
+
+    body.inspector-open {
+      overflow: hidden;
+    }
+
+    #tab-content-inspector .sticky {
+      top: 0.75rem !important;
+    }
+
   </style>
 </head>
 <body class="min-h-screen bg-gradient-to-b from-slate-50 via-white to-zinc-50 text-zinc-700 font-sans selection:bg-slate-300 selection:text-slate-900">
@@ -222,7 +231,7 @@
         <h1 class="text-lg font-black tracking-[0.18em] uppercase text-zinc-700">Look Builder</h1>
       </div>
 
-      <div class="flex flex-wrap gap-2" role="tablist" aria-label="Primary">
+      <div class="flex flex-wrap gap-2 items-center" role="tablist" aria-label="Primary">
         <button id="tab-btn-outfits" type="button" class="tab-btn rounded-2xl px-4 py-3 text-xs tracking-[0.22em] uppercase font-bold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300" role="tab" aria-controls="tab-content-outfits" aria-selected="true">
           Assemblies
         </button>
@@ -232,11 +241,11 @@
         <button id="tab-btn-combinations" type="button" class="tab-btn rounded-2xl px-4 py-3 text-xs tracking-[0.22em] uppercase font-bold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300" role="tab" aria-controls="tab-content-combinations" aria-selected="false">
           Combinations
         </button>
-        <button id="tab-btn-inspector" type="button" class="tab-btn rounded-2xl px-4 py-3 text-xs tracking-[0.22em] uppercase font-bold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300" role="tab" aria-controls="tab-content-inspector" aria-selected="false">
-          Lab Inspector
-        </button>
         <button id="tab-btn-guide" type="button" class="tab-btn rounded-2xl px-4 py-3 text-xs tracking-[0.22em] uppercase font-bold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300" role="tab" aria-controls="tab-content-guide" aria-selected="false">
           Knowledge Base
+        </button>
+        <button id="download-html-btn" type="button" class="rounded-2xl px-4 py-3 text-xs tracking-[0.22em] uppercase font-bold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300 border border-sky-300 bg-sky-100 text-sky-800 hover:bg-sky-200">
+          Download
         </button>
       </div>
     </div>
@@ -343,9 +352,9 @@
 
             <div class="mt-4 flex flex-wrap gap-2 items-start">
               <button id="log-item-btn" type="button" class="w-full sm:w-auto rounded-2xl bg-slate-200 text-slate-700 hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 px-5 py-3 text-xs uppercase tracking-[0.22em] font-bold transition-all border border-slate-200">
-                + Log Item
+                New Item
               </button>
-              <div class="relative w-full sm:w-auto">
+              <div class="relative w-full sm:w-auto hidden">
                 <button id="export-data-btn" type="button" class="w-full sm:w-auto rounded-2xl bg-white text-slate-700 hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 px-4 py-3 text-xs uppercase tracking-[0.18em] font-bold transition-all border border-slate-200">
                   Export Data
                 </button>
@@ -354,10 +363,10 @@
                   <button id="export-excel-btn" type="button" class="w-full text-left rounded-xl px-3 py-2 text-xs uppercase tracking-[0.16em] font-bold text-slate-700 hover:bg-slate-50">Export Excel</button>
                 </div>
               </div>
-              <button id="import-data-btn" type="button" class="w-full sm:w-auto rounded-2xl bg-white text-slate-700 hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 px-4 py-3 text-xs uppercase tracking-[0.18em] font-bold transition-all border border-slate-200">
+              <button id="import-data-btn" type="button" class="hidden w-full sm:w-auto rounded-2xl bg-white text-slate-700 hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 px-4 py-3 text-xs uppercase tracking-[0.18em] font-bold transition-all border border-slate-200">
                 Import Data
               </button>
-              <button id="reset-data-btn" type="button" class="w-full sm:w-auto rounded-2xl bg-white text-slate-700 hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 px-4 py-3 text-xs uppercase tracking-[0.18em] font-bold transition-all border border-slate-200">
+              <button id="reset-data-btn" type="button" class="hidden w-full sm:w-auto rounded-2xl bg-white text-slate-700 hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 px-4 py-3 text-xs uppercase tracking-[0.18em] font-bold transition-all border border-slate-200">
                 Reset Data
               </button>
               <input id="import-data-input" type="file" accept="application/json" class="hidden" />
@@ -437,7 +446,7 @@
                 <circle cx="11" cy="11" r="7"></circle>
                 <path d="M20 20l-3.5-3.5"></path>
               </svg>
-              <input id="search-bar" type="text" placeholder="Search..." class="w-full bg-transparent text-xs uppercase tracking-[0.12em] text-zinc-600 outline-none placeholder-slate-400 font-semibold" />
+              <input id="search-bar" type="text" placeholder="" class="w-full bg-transparent text-xs uppercase tracking-[0.12em] text-zinc-600 outline-none placeholder-slate-400 font-semibold" />
             </div>
           </div>
         </div>
@@ -447,7 +456,14 @@
     </section>
 
     
-    <section id="tab-content-inspector" class="hidden" role="tabpanel" aria-labelledby="tab-btn-inspector">
+    <section id="tab-content-inspector" class="hidden fixed inset-0 z-[70] overflow-y-auto bg-slate-900/30 backdrop-blur-sm px-3 py-4 sm:px-6 sm:py-8">
+      <div class="max-w-6xl mx-auto">
+        <div class="mb-4 flex justify-end">
+          <button id="close-inspector-btn" type="button" class="rounded-2xl border border-slate-200 bg-white/95 px-4 py-3 text-xs uppercase tracking-[0.18em] font-bold text-slate-700 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300">
+            Close
+          </button>
+        </div>
+
       <div class="mb-6 rounded-3xl border border-slate-200 bg-white p-5 sm:p-6 soft-shadow">
         <div class="flex items-center gap-4">
           <div class="w-11 h-11 rounded-2xl border border-slate-200 bg-slate-50 flex items-center justify-center text-slate-500">
@@ -608,9 +624,14 @@
             </div>
           </div>
 
-          <button id="commit-garment-btn" type="button" class="mt-8 w-full rounded-2xl bg-slate-200 hover:bg-slate-100 text-slate-700 text-sm tracking-[0.22em] uppercase font-black py-4 px-4 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 border border-slate-200">
-            Commit to Inventory
-          </button>
+          <div class="mt-8 flex flex-col sm:flex-row gap-3">
+            <button id="commit-garment-btn" type="button" class="flex-1 rounded-2xl bg-slate-200 hover:bg-slate-100 text-slate-700 text-sm tracking-[0.22em] uppercase font-black py-4 px-4 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 border border-slate-200">
+              Commit to Inventory
+            </button>
+            <button id="delete-garment-btn" type="button" class="hidden sm:w-auto rounded-2xl bg-white hover:bg-rose-50 text-rose-700 text-sm tracking-[0.22em] uppercase font-black py-4 px-5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-300 border border-rose-200">
+              Delete Item
+            </button>
+          </div>
         </section>
 
         <aside class="xl:col-span-5">
@@ -661,9 +682,11 @@
           </div>
         </aside>
       </div>
+    
+      </div>
     </section>
 
-    <section id="tab-content-combinations" class="hidden" role="tabpanel" aria-labelledby="tab-btn-combinations">
+<section id="tab-content-combinations" class="hidden" role="tabpanel" aria-labelledby="tab-btn-combinations">
       <div class="mb-6 rounded-3xl border border-slate-200 bg-white p-5 sm:p-6 soft-shadow">
         <div class="flex items-center gap-4">
           <div class="w-11 h-11 rounded-2xl border border-slate-200 bg-slate-50 flex items-center justify-center text-slate-500">
@@ -683,126 +706,142 @@
         </div>
       </div>
 
-<div class="grid grid-cols-1 xl:grid-cols-12 gap-6">
-        <section class="xl:col-span-4 rounded-3xl border border-slate-200 bg-white p-5 sm:p-6 card-shadow">
-          <div class="flex items-center justify-between gap-4 pb-4 border-b border-slate-100">
-            <div>
-              <h3 id="combination-form-title" class="text-lg font-semibold tracking-tight text-zinc-600">New Combination</h3>
-              <p class="mt-1 text-sm text-slate-400">Choose the garments you want to link together.</p>
-            </div>
-            <span id="combination-count-badge" class="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-[10px] font-mono font-bold text-slate-500">0</span>
+<div class="space-y-6">
+      <section class="rounded-3xl border border-slate-200 bg-white p-5 sm:p-6 card-shadow">
+        <div class="flex items-center justify-between gap-4 pb-4 border-b border-slate-100">
+          <div>
+            <h3 id="combination-form-title" class="text-lg font-semibold tracking-tight text-zinc-600">New Combination</h3>
+            <p class="mt-1 text-sm text-slate-400">Choose the garments you want to link together.</p>
+          </div>
+          <span id="combination-count-badge" class="hidden rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-[10px] font-mono font-bold text-slate-500">0</span>
+        </div>
+
+        <div class="mt-5 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-4">
+          <div>
+            <label class="block text-[10px] uppercase tracking-[0.18em] text-slate-400 font-semibold mb-2" for="combo-over-layer">Over Layer</label>
+            <select id="combo-over-layer" class="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-zinc-600 font-semibold outline-none">
+              <option value="">None</option>
+            </select>
           </div>
 
-          <div class="mt-5 space-y-4">
-            <div>
-              <label class="block text-[10px] uppercase tracking-[0.18em] text-slate-400 font-semibold mb-2" for="combo-over-layer">Over Layer</label>
-              <select id="combo-over-layer" class="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-zinc-600 font-semibold outline-none">
-                <option value="">None</option>
-              </select>
-            </div>
-
-            <div>
-              <label class="block text-[10px] uppercase tracking-[0.18em] text-slate-400 font-semibold mb-2" for="combo-top-item">Top Item</label>
-              <select id="combo-top-item" class="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-zinc-600 font-semibold outline-none">
-                <option value="">None</option>
-              </select>
-            </div>
-
-            <div>
-              <label class="block text-[10px] uppercase tracking-[0.18em] text-slate-400 font-semibold mb-2" for="combo-under-layer-color">Under Layer Colour</label>
-              <select id="combo-under-layer-color" class="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-zinc-600 font-semibold outline-none">
-                <option value="">None</option>
-              </select>
-            </div>
-
-            <div>
-              <label class="block text-[10px] uppercase tracking-[0.18em] text-slate-400 font-semibold mb-2" for="combo-bottom-item">Bottom Item</label>
-              <select id="combo-bottom-item" class="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-zinc-600 font-semibold outline-none">
-                <option value="">None</option>
-              </select>
-            </div>
-
-            <div>
-              <label class="block text-[10px] uppercase tracking-[0.18em] text-slate-400 font-semibold mb-2" for="combo-shoe-item">Shoe Item</label>
-              <select id="combo-shoe-item" class="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-zinc-600 font-semibold outline-none">
-                <option value="">None</option>
-              </select>
-            </div>
+          <div>
+            <label class="block text-[10px] uppercase tracking-[0.18em] text-slate-400 font-semibold mb-2" for="combo-top-item">Top Item</label>
+            <select id="combo-top-item" class="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-zinc-600 font-semibold outline-none">
+              <option value="">None</option>
+            </select>
           </div>
 
-          <div class="mt-6 flex flex-wrap gap-2">
-            <button id="save-combination-btn" type="button" class="rounded-2xl bg-slate-200 text-slate-700 hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 px-5 py-3 text-xs uppercase tracking-[0.22em] font-bold transition-all border border-slate-200">
-              Save Combination
-            </button>
-            <button id="cancel-combination-btn" type="button" class="rounded-2xl bg-white text-slate-700 hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 px-5 py-3 text-xs uppercase tracking-[0.22em] font-bold transition-all border border-slate-200">
-              Clear
-            </button>
+          <div>
+            <label class="block text-[10px] uppercase tracking-[0.18em] text-slate-400 font-semibold mb-2" for="combo-under-layer-color">Under Layer Colour</label>
+            <select id="combo-under-layer-color" class="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-zinc-600 font-semibold outline-none">
+              <option value="">None</option>
+            </select>
           </div>
-        </section>
 
-        <section class="xl:col-span-8 rounded-3xl border border-slate-200 bg-white p-5 sm:p-6 card-shadow overflow-hidden">
-          <div class="pb-4 border-b border-slate-100">
+          <div>
+            <label class="block text-[10px] uppercase tracking-[0.18em] text-slate-400 font-semibold mb-2" for="combo-bottom-item">Bottom Item</label>
+            <select id="combo-bottom-item" class="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-zinc-600 font-semibold outline-none">
+              <option value="">None</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-[10px] uppercase tracking-[0.18em] text-slate-400 font-semibold mb-2" for="combo-shoe-item">Shoe Item</label>
+            <select id="combo-shoe-item" class="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-zinc-600 font-semibold outline-none">
+              <option value="">None</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="mt-6 flex flex-wrap gap-2">
+          <button id="save-combination-btn" type="button" class="rounded-2xl bg-slate-200 text-slate-700 hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 px-5 py-3 text-xs uppercase tracking-[0.22em] font-bold transition-all border border-slate-200">
+            Save Combination
+          </button>
+          <button id="cancel-combination-btn" type="button" class="rounded-2xl bg-white text-slate-700 hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 px-5 py-3 text-xs uppercase tracking-[0.22em] font-bold transition-all border border-slate-200">
+            Clear
+          </button>
+        </div>
+      </section>
+
+      <section class="rounded-3xl border border-slate-200 bg-white p-5 sm:p-6 card-shadow overflow-hidden">
+        <div class="pb-4 border-b border-slate-100 flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+          <div>
             <h3 class="text-lg font-semibold tracking-tight text-zinc-600">Saved Combinations</h3>
             <p class="mt-1 text-sm text-slate-400">These rows feed the matching logic inside Assemblies. Click a column label to sort.</p>
           </div>
-
-          <div class="mt-5 mb-4">
-            <label class="block text-[10px] uppercase tracking-[0.18em] text-slate-400 font-semibold mb-2" for="combinations-filter-input">Filter Saved Combinations</label>
-            <div class="flex items-center rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
-              <svg viewBox="0 0 24 24" class="w-4 h-4 text-slate-400 mr-3" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <circle cx="11" cy="11" r="7"></circle>
-                <path d="M20 20l-3.5-3.5"></path>
-              </svg>
-              <input id="combinations-filter-input" type="text" placeholder="Filter by item, colour, type..." class="w-full bg-transparent text-xs uppercase tracking-[0.12em] text-zinc-600 outline-none placeholder-slate-400 font-semibold" />
+          <div class="md:shrink-0">
+            <div class="flex flex-wrap md:justify-end gap-2">
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-2.5 min-w-[5.75rem] text-center">
+                <div id="combo-stat-total" class="text-base font-semibold tracking-tight text-zinc-600 leading-none">0</div>
+                <div class="mt-1 text-[10px] uppercase tracking-[0.16em] text-slate-400 font-semibold">Combos</div>
+              </div>
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-2.5 min-w-[5.75rem] text-center">
+                <div id="combo-stat-avg" class="text-base font-semibold tracking-tight text-zinc-600 leading-none">0/100</div>
+                <div class="mt-1 text-[10px] uppercase tracking-[0.16em] text-slate-400 font-semibold">Avg</div>
+              </div>
             </div>
           </div>
+        </div>
 
-          <div class="overflow-x-auto">
-            <table class="min-w-full text-left">
-              <thead id="combinations-table-head">
-                <tr class="border-b border-slate-100">
-                  <th class="px-3 py-3">
-                    <button type="button" data-role="sort-combinations" data-key="overLayer" class="flex items-center gap-1 text-[10px] uppercase tracking-[0.18em] text-slate-400 hover:text-zinc-600 font-semibold">Over Layer<span data-sort-indicator="overLayer"></span></button>
-                  </th>
-                  <th class="px-3 py-3">
-                    <button type="button" data-role="sort-combinations" data-key="topType" class="flex items-center gap-1 text-[10px] uppercase tracking-[0.18em] text-slate-400 hover:text-zinc-600 font-semibold">Top Type<span data-sort-indicator="topType"></span></button>
-                  </th>
-                  <th class="px-3 py-3">
-                    <button type="button" data-role="sort-combinations" data-key="topItem" class="flex items-center gap-1 text-[10px] uppercase tracking-[0.18em] text-slate-400 hover:text-zinc-600 font-semibold">Top Item<span data-sort-indicator="topItem"></span></button>
-                  </th>
-                  <th class="px-3 py-3">
-                    <button type="button" data-role="sort-combinations" data-key="topColor" class="flex items-center gap-1 text-[10px] uppercase tracking-[0.18em] text-slate-400 hover:text-zinc-600 font-semibold">Top Colour<span data-sort-indicator="topColor"></span></button>
-                  </th>
-                  <th class="px-3 py-3">
-                    <button type="button" data-role="sort-combinations" data-key="underLayerColor" class="flex items-center gap-1 text-[10px] uppercase tracking-[0.18em] text-slate-400 hover:text-zinc-600 font-semibold">Under Layer Colour<span data-sort-indicator="underLayerColor"></span></button>
-                  </th>
-                  <th class="px-3 py-3">
-                    <button type="button" data-role="sort-combinations" data-key="bottomType" class="flex items-center gap-1 text-[10px] uppercase tracking-[0.18em] text-slate-400 hover:text-zinc-600 font-semibold">Bottom Type<span data-sort-indicator="bottomType"></span></button>
-                  </th>
-                  <th class="px-3 py-3">
-                    <button type="button" data-role="sort-combinations" data-key="bottomItem" class="flex items-center gap-1 text-[10px] uppercase tracking-[0.18em] text-slate-400 hover:text-zinc-600 font-semibold">Bottom Item<span data-sort-indicator="bottomItem"></span></button>
-                  </th>
-                  <th class="px-3 py-3">
-                    <button type="button" data-role="sort-combinations" data-key="bottomColor" class="flex items-center gap-1 text-[10px] uppercase tracking-[0.18em] text-slate-400 hover:text-zinc-600 font-semibold">Bottom Colour<span data-sort-indicator="bottomColor"></span></button>
-                  </th>
-                  <th class="px-3 py-3">
-                    <button type="button" data-role="sort-combinations" data-key="shoeType" class="flex items-center gap-1 text-[10px] uppercase tracking-[0.18em] text-slate-400 hover:text-zinc-600 font-semibold">Shoe Type<span data-sort-indicator="shoeType"></span></button>
-                  </th>
-                  <th class="px-3 py-3">
-                    <button type="button" data-role="sort-combinations" data-key="shoeItem" class="flex items-center gap-1 text-[10px] uppercase tracking-[0.18em] text-slate-400 hover:text-zinc-600 font-semibold">Shoe Item<span data-sort-indicator="shoeItem"></span></button>
-                  </th>
-                  <th class="px-3 py-3">
-                    <button type="button" data-role="sort-combinations" data-key="shoeColor" class="flex items-center gap-1 text-[10px] uppercase tracking-[0.18em] text-slate-400 hover:text-zinc-600 font-semibold">Shoe Colour<span data-sort-indicator="shoeColor"></span></button>
-                  </th>
-                  <th class="px-3 py-3 text-[10px] uppercase tracking-[0.18em] text-slate-400 font-semibold text-right">Actions</th>
-                </tr>
-              </thead>
-              <tbody id="combinations-table-body"></tbody>
-            </table>
+        <div class="mt-5 mb-4">
+          <label class="block text-[10px] uppercase tracking-[0.18em] text-slate-400 font-semibold mb-2" for="combinations-filter-input">Filter Saved Combinations</label>
+          <div class="flex items-center rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
+            <svg viewBox="0 0 24 24" class="w-4 h-4 text-slate-400 mr-3" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="7"></circle>
+              <path d="M20 20l-3.5-3.5"></path>
+            </svg>
+            <input id="combinations-filter-input" type="text" placeholder="Filter by item, colour, type..." class="w-full bg-transparent text-xs uppercase tracking-[0.12em] text-zinc-600 outline-none placeholder-slate-400 font-semibold" />
           </div>
-        </section>
-      </div>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="min-w-full text-left">
+            <thead id="combinations-table-head">
+              <tr class="border-b border-slate-100">
+                <th class="px-3 py-3">
+                  <button type="button" data-role="sort-combinations" data-key="overLayer" class="flex items-center gap-1 text-[10px] uppercase tracking-[0.18em] text-slate-400 hover:text-zinc-600 font-semibold">Over Layer<span data-sort-indicator="overLayer"></span></button>
+                </th>
+                <th class="px-3 py-3">
+                  <button type="button" data-role="sort-combinations" data-key="topType" class="flex items-center gap-1 text-[10px] uppercase tracking-[0.18em] text-slate-400 hover:text-zinc-600 font-semibold">Top Type<span data-sort-indicator="topType"></span></button>
+                </th>
+                <th class="px-3 py-3">
+                  <button type="button" data-role="sort-combinations" data-key="topItem" class="flex items-center gap-1 text-[10px] uppercase tracking-[0.18em] text-slate-400 hover:text-zinc-600 font-semibold">Top Item<span data-sort-indicator="topItem"></span></button>
+                </th>
+                <th class="px-3 py-3">
+                  <button type="button" data-role="sort-combinations" data-key="topColor" class="flex items-center gap-1 text-[10px] uppercase tracking-[0.18em] text-slate-400 hover:text-zinc-600 font-semibold">Top Colour<span data-sort-indicator="topColor"></span></button>
+                </th>
+                <th class="px-3 py-3">
+                  <button type="button" data-role="sort-combinations" data-key="underLayerColor" class="flex items-center gap-1 text-[10px] uppercase tracking-[0.18em] text-slate-400 hover:text-zinc-600 font-semibold">Under Layer Colour<span data-sort-indicator="underLayerColor"></span></button>
+                </th>
+                <th class="px-3 py-3">
+                  <button type="button" data-role="sort-combinations" data-key="bottomType" class="flex items-center gap-1 text-[10px] uppercase tracking-[0.18em] text-slate-400 hover:text-zinc-600 font-semibold">Bottom Type<span data-sort-indicator="bottomType"></span></button>
+                </th>
+                <th class="px-3 py-3">
+                  <button type="button" data-role="sort-combinations" data-key="bottomItem" class="flex items-center gap-1 text-[10px] uppercase tracking-[0.18em] text-slate-400 hover:text-zinc-600 font-semibold">Bottom Item<span data-sort-indicator="bottomItem"></span></button>
+                </th>
+                <th class="px-3 py-3">
+                  <button type="button" data-role="sort-combinations" data-key="bottomColor" class="flex items-center gap-1 text-[10px] uppercase tracking-[0.18em] text-slate-400 hover:text-zinc-600 font-semibold">Bottom Colour<span data-sort-indicator="bottomColor"></span></button>
+                </th>
+                <th class="px-3 py-3">
+                  <button type="button" data-role="sort-combinations" data-key="shoeType" class="flex items-center gap-1 text-[10px] uppercase tracking-[0.18em] text-slate-400 hover:text-zinc-600 font-semibold">Shoe Type<span data-sort-indicator="shoeType"></span></button>
+                </th>
+                <th class="px-3 py-3">
+                  <button type="button" data-role="sort-combinations" data-key="shoeItem" class="flex items-center gap-1 text-[10px] uppercase tracking-[0.18em] text-slate-400 hover:text-zinc-600 font-semibold">Shoe Item<span data-sort-indicator="shoeItem"></span></button>
+                </th>
+                <th class="px-3 py-3">
+                  <button type="button" data-role="sort-combinations" data-key="shoeColor" class="flex items-center gap-1 text-[10px] uppercase tracking-[0.18em] text-slate-400 hover:text-zinc-600 font-semibold">Shoe Colour<span data-sort-indicator="shoeColor"></span></button>
+                </th>
+                <th class="px-3 py-3 text-[10px] uppercase tracking-[0.18em] text-slate-400 font-semibold text-right">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="combinations-table-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </div>
     </section>
+
+</section>
 
 <section id="tab-content-guide" class="hidden" role="tabpanel" aria-labelledby="tab-btn-guide">
       <div class="mb-6 rounded-3xl border border-slate-200 bg-white p-5 sm:p-6 soft-shadow">
@@ -873,7 +912,7 @@
       FOOTWEAR: "Footwear",
     };
 
-    const TAB_IDS = ["outfits", "closet", "combinations", "inspector", "guide"];
+    const TAB_IDS = ["outfits", "closet", "combinations", "guide"];
 
     const UNDER_COLORS = [
       {
@@ -5603,6 +5642,9 @@ function enrichGarment(garment) {
         acc[id] = document.getElementById(`tab-content-${id}`);
         return acc;
       }, {}),
+      downloadHtmlBtn: document.getElementById("download-html-btn"),
+      inspectorOverlay: document.getElementById("tab-content-inspector"),
+      closeInspectorBtn: document.getElementById("close-inspector-btn"),
       mannequinBoard: document.getElementById("mannequin-board"),
       ensembleScore: document.getElementById("ensemble-score"),
       clearConfigBtn: document.getElementById("clear-config-btn"),
@@ -5670,9 +5712,12 @@ function enrichGarment(garment) {
       barValFit: document.getElementById("bar-val-fit"),
       barFillFit: document.getElementById("bar-fill-fit"),
       commitGarmentBtn: document.getElementById("commit-garment-btn"),
+      deleteGarmentBtn: document.getElementById("delete-garment-btn"),
       inspectorSubtitle: document.getElementById("inspector-subtitle"),
     
       combinationCountBadge: document.getElementById("combination-count-badge"),
+      comboStatTotal: document.getElementById("combo-stat-total"),
+      comboStatAvg: document.getElementById("combo-stat-avg"),
       combinationFormTitle: document.getElementById("combination-form-title"),
       comboOverLayer: document.getElementById("combo-over-layer"),
       comboTopItem: document.getElementById("combo-top-item"),
@@ -5687,6 +5732,50 @@ function enrichGarment(garment) {
 };
 
     
+
+    function showInspectorOverlay() {
+      if (!elements.inspectorOverlay) return;
+      elements.inspectorOverlay.classList.remove("hidden");
+      document.body.classList.add("inspector-open");
+      renderInspector();
+    }
+
+    function hideInspectorOverlay() {
+      if (!elements.inspectorOverlay) return;
+      elements.inspectorOverlay.classList.add("hidden");
+      document.body.classList.remove("inspector-open");
+    }
+
+    async function downloadCurrentHtmlSnapshot() {
+      try {
+        const sourceHtml = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
+        const garmentsJson = JSON.stringify(state.garments, null, 6);
+        const combinationsJson = JSON.stringify(dedupeCombinationRules(state.savedOutfits), null, 6);
+        const stamp = new Date().toISOString().replace(/[-:TZ.]/g, "").slice(0, 14);
+        const newGarmentKey = `look_builder_download_garments_${stamp}`;
+        const newCombinationKey = `look_builder_download_combinations_${stamp}`;
+
+        let updated = sourceHtml
+          .replace(/const STORAGE_KEY = "[^"]+";/, `const STORAGE_KEY = "${newGarmentKey}";`)
+          .replace(/const COMBINATIONS_STORAGE_KEY = "[^"]+";/, `const COMBINATIONS_STORAGE_KEY = "${newCombinationKey}";`)
+          .replace(/const INITIAL_GARMENTS = \[[\s\S]*?\n    \];/, `const INITIAL_GARMENTS = ${garmentsJson};`)
+          .replace(/const DEFAULT_COMBINATIONS = \[[\s\S]*?\n    \];/, `const DEFAULT_COMBINATIONS = ${combinationsJson};`);
+
+        const blob = new Blob([updated], { type: "text/html;charset=utf-8" });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = `look-builder-${stamp}.html`;
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        URL.revokeObjectURL(url);
+      } catch (error) {
+        console.error(error);
+        alert("Could not generate the downloadable HTML snapshot.");
+      }
+    }
+
 function switchTab(tabId) {
       state.activeTab = tabId;
       renderTabs();
@@ -5694,10 +5783,6 @@ function switchTab(tabId) {
       if (tabId === "closet") {
         populateInventoryFilterOptions();
         renderCloset();
-      }
-
-      if (tabId === "inspector") {
-        renderInspector();
       }
 
       if (tabId === "outfits") {
@@ -5992,6 +6077,10 @@ function renderInspector() {
         elements.commitGarmentBtn.textContent = state.inspector.editingId ? "Update Item" : "Commit to Inventory";
       }
 
+      if (elements.deleteGarmentBtn) {
+        elements.deleteGarmentBtn.classList.toggle("hidden", !state.inspector.editingId);
+      }
+
       if (elements.inspectorSubtitle) {
         elements.inspectorSubtitle.textContent = state.inspector.editingId
           ? "Edit a garment using real-world buying signals and update its score."
@@ -6104,7 +6193,39 @@ function renderInspector() {
       elements.inpNotes.value = item.notes || "";
 
       renderInspector();
-      switchTab("inspector");
+      showInspectorOverlay();
+    }
+
+    
+    function deleteInspectorGarment() {
+      if (!state.inspector.editingId) return;
+
+      const garmentId = state.inspector.editingId;
+      const garment = getGarmentById(garmentId);
+      if (!garment) return;
+
+      const confirmed = window.confirm(`Delete "${garment.name}"? This will also remove any combinations that use it.`);
+      if (!confirmed) return;
+
+      state.garments = sortGarmentsAlphabetically(
+        state.garments.filter((item) => item.id !== garmentId)
+      );
+
+      state.savedOutfits = dedupeCombinationRules(
+        state.savedOutfits.filter((rule) =>
+          rule.outer !== garmentId &&
+          rule.top !== garmentId &&
+          rule.bottom !== garmentId &&
+          rule.shoe !== garmentId
+        )
+      );
+
+      saveGarmentsToStorage();
+      saveCombinationsToStorage();
+      refreshDataViews();
+      resetInspectorToNew();
+      hideInspectorOverlay();
+      switchTab("closet");
     }
 
     function saveInspectorGarment() {
@@ -6136,6 +6257,7 @@ function renderInspector() {
       saveGarmentsToStorage();
       refreshDataViews();
       resetInspectorToNew();
+      hideInspectorOverlay();
       switchTab("closet");
     }
 
@@ -6742,6 +6864,21 @@ function toggleSelection(slot, value) {
       populateCombinationEditorOptions();
       elements.combinationsTableBody.replaceChildren();
       elements.combinationCountBadge.textContent = String(state.savedOutfits.length);
+      if (elements.comboStatTotal) {
+        elements.comboStatTotal.textContent = String(state.savedOutfits.length);
+      }
+      if (elements.comboStatAvg) {
+        const resolvedRowsForAverage = state.savedOutfits.map((rule, index) => getCombinationResolvedRow(rule, index));
+        const averageCombinationScore = resolvedRowsForAverage.length
+          ? Math.round(resolvedRowsForAverage.reduce((sum, entry) => {
+              const parts = [entry.outer, entry.top, entry.bottom, entry.shoe].filter(Boolean);
+              if (!parts.length) return sum;
+              const comboScore = Math.round(parts.reduce((s, garment) => s + (garment.quality?.score || 0), 0) / parts.length);
+              return sum + comboScore;
+            }, 0) / resolvedRowsForAverage.length)
+          : 0;
+        elements.comboStatAvg.textContent = `${averageCombinationScore}/100`;
+      }
       if (elements.combinationsFilterInput && elements.combinationsFilterInput.value !== state.combinationFilterQuery) {
         elements.combinationsFilterInput.value = state.combinationFilterQuery;
       }
@@ -6853,6 +6990,22 @@ function bindEvents() {
         button.addEventListener("click", () => switchTab(tabId));
       });
 
+      if (elements.downloadHtmlBtn) {
+        elements.downloadHtmlBtn.addEventListener("click", downloadCurrentHtmlSnapshot);
+      }
+      if (elements.closeInspectorBtn) {
+        elements.closeInspectorBtn.addEventListener("click", hideInspectorOverlay);
+      }
+
+
+      if (elements.inspectorOverlay) {
+        elements.inspectorOverlay.addEventListener("click", (event) => {
+          if (event.target === elements.inspectorOverlay) {
+            hideInspectorOverlay();
+          }
+        });
+      }
+
       elements.clearConfigBtn.addEventListener("click", clearMannequin);
 
       elements.filterCategory.addEventListener("change", (event) => {
@@ -6888,7 +7041,7 @@ function bindEvents() {
 
       elements.logItemBtn.addEventListener("click", () => {
         resetInspectorToNew();
-        switchTab("inspector");
+        showInspectorOverlay();
       });
 
       elements.exportDataBtn.addEventListener("click", (event) => {
@@ -7002,6 +7155,9 @@ function bindEvents() {
       }
 
       elements.commitGarmentBtn.addEventListener("click", saveInspectorGarment);
+      if (elements.deleteGarmentBtn) {
+        elements.deleteGarmentBtn.addEventListener("click", deleteInspectorGarment);
+      }
 
       elements.saveCombinationBtn.addEventListener("click", saveCombinationFromEditor);
       elements.cancelCombinationBtn.addEventListener("click", resetCombinationEditor);
