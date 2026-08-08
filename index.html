@@ -13179,16 +13179,22 @@ function sortGarmentsAlphabetically(garments) {
       try {
         const garmentsToStore = state.garments.map(({ quality, ...garment }) => garment);
         localStorage.setItem(STORAGE_KEY, JSON.stringify({ version: 2, garments: garmentsToStore }));
+        return true;
       } catch (error) {
-        console.warn("Unable to save garments locally.", error);
+        console.error("Unable to save garments locally.", error);
+        alert("Your garment change could NOT be saved (browser storage failed). Please export/download a snapshot immediately to avoid losing this edit, and free up storage space before continuing.");
+        return false;
       }
     }
 
     function saveCombinationsToStorage() {
       try {
         localStorage.setItem(COMBINATIONS_STORAGE_KEY, JSON.stringify({ version: 2, combinations: state.savedOutfits }));
+        return true;
       } catch (error) {
-        console.warn("Unable to save combinations locally.", error);
+        console.error("Unable to save combinations locally.", error);
+        alert("Your outfit combination change could NOT be saved (browser storage failed). Please export/download a snapshot immediately to avoid losing this edit.");
+        return false;
       }
     }
 
