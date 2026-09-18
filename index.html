@@ -306,10 +306,10 @@
       </div>
 
       <div class="flex flex-wrap gap-2 items-center" role="tablist" aria-label="Primary" data-om-id="d732bfa4:17">
-        <button id="tab-btn-outfits" type="button" class="tab-btn rounded-2xl px-4 py-3 text-xs tracking-[0.22em] uppercase font-bold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 bg-transparent border border-transparent text-zinc-500 hover:bg-slate-100 hover:border-slate-200 hover:text-zinc-700" role="tab" aria-controls="tab-content-outfits" aria-selected="false" data-om-id="d732bfa4:18">
+        <button id="tab-btn-outfits" type="button" class="tab-btn rounded-2xl px-4 py-3 text-xs tracking-[0.22em] uppercase font-bold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 bg-white border border-slate-200 text-zinc-700 shadow-sm" role="tab" aria-controls="tab-content-outfits" aria-selected="true" data-om-id="d732bfa4:18">
           Assemblies
         </button>
-        <button id="tab-btn-closet" type="button" class="tab-btn rounded-2xl px-4 py-3 text-xs tracking-[0.22em] uppercase font-bold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 bg-white border border-slate-200 text-zinc-700 shadow-sm" role="tab" aria-controls="tab-content-closet" aria-selected="true" data-om-id="d732bfa4:19">
+        <button id="tab-btn-closet" type="button" class="tab-btn rounded-2xl px-4 py-3 text-xs tracking-[0.22em] uppercase font-bold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 bg-transparent border border-transparent text-zinc-500 hover:bg-slate-100 hover:border-slate-200 hover:text-zinc-700" role="tab" aria-controls="tab-content-closet" aria-selected="false" data-om-id="d732bfa4:19">
           Inventory
         </button>
         <button id="tab-btn-combinations" type="button" class="tab-btn rounded-2xl px-4 py-3 text-xs tracking-[0.22em] uppercase font-bold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 bg-transparent border border-transparent text-zinc-500 hover:bg-slate-100 hover:border-slate-200 hover:text-zinc-700" role="tab" aria-controls="tab-content-combinations" aria-selected="false" data-om-id="d732bfa4:20">
@@ -326,32 +326,30 @@
   </nav>
 
   <main class="page-shell py-6 sm:py-8" data-om-id="d732bfa4:23">
-    <section id="tab-content-outfits" role="tabpanel" aria-labelledby="tab-btn-outfits" class="hidden" data-om-id="d732bfa4:24">
+    <section id="tab-content-outfits" role="tabpanel" aria-labelledby="tab-btn-outfits" class="" data-om-id="d732bfa4:24">
       <div class="grid grid-cols-1 xl:grid-cols-12 gap-6" data-om-id="d732bfa4:25">
         <aside class="xl:col-span-2 rounded-3xl border border-slate-200 bg-white p-5 sm:p-6 card-shadow flex flex-col min-h-[34rem]" data-om-id="d732bfa4:26">
           <div class="pb-4 border-b border-slate-100" data-om-id="d732bfa4:27">
             <h3 class="text-lg font-semibold tracking-tight text-zinc-600" data-om-id="d732bfa4:28">Look</h3>
           </div>
 
-          <div id="mannequin-board" class="mt-4 flex-1 rounded-3xl border border-dashed border-slate-200 bg-gradient-to-b from-slate-50 to-white p-3 overflow-y-auto flex flex-col items-center gap-3 min-h-[18rem]" data-om-id="d732bfa4:29"><button type="button" class="slot-item w-full flex justify-center items-center group relative cursor-pointer py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 rounded-2xl" title="Remove Top" aria-label="Remove Top" data-role="remove-slot" data-slot="top">
-        <div class="w-28 h-28 rounded-3xl border border-slate-200 bg-white flex justify-center items-center transition-opacity group-hover:opacity-20 overflow-hidden">
-          <div class="w-20 h-20"><div class="w-full h-full" aria-label="Uniqlo Merino Sweater">
-        <svg viewBox="0 0 100 100" class="w-full h-full" fill="none" aria-hidden="true">
-          <path d="M41 18.5 Q50 26 59 18.5 L69 23 Q73.2 24.8 74 29 L77.9 62.7 Q78.3 66.2 74.8 66.9 L72.3 67.4 Q69.6 67.9 69.2 65.2 L67 39 L64.5 41.5 V78.5 Q64.5 83 60 83 H40 Q35.5 83 35.5 78.5 V41.5 L33 39 L30.8 65.2 Q30.4 67.9 27.7 67.4 L25.2 66.9 Q21.7 66.2 22.1 62.7 L26 29 Q26.8 24.8 31 23 Z" fill="#18181b" stroke="#79797b" stroke-width="1.5" stroke-linejoin="round"></path>
-          <path d="M42.8 20.7 Q50 27.3 57.2 20.7" stroke="#79797b" stroke-width="0.75" stroke-linecap="round" opacity="0.5"></path>
-          <path d="M69.6 61.4 L77.7 60 M30.4 61.4 L22.3 60" stroke="#79797b" stroke-width="0.75" stroke-linecap="round" opacity="0.5"></path>
-          <path d="M38 79.2 H62" stroke="#79797b" stroke-width="0.75" stroke-linecap="round" opacity="0.35"></path>
-        </svg>
-      </div></div>
-        </div>
-        <div class="remove-overlay absolute inset-0 hidden items-center justify-center transition-all font-sans">
-          <span class="rounded-full bg-slate-200 text-slate-700 px-3 py-2 text-[10px] tracking-[0.18em] uppercase font-black">Remove</span>
-        </div>
-      </button></div>
+          <div id="mannequin-board" class="mt-4 flex-1 rounded-3xl border border-dashed border-slate-200 bg-gradient-to-b from-slate-50 to-white p-3 overflow-y-auto flex flex-col items-center gap-3 min-h-[18rem]" data-om-id="d732bfa4:29"><div class="w-full h-full rounded-3xl border border-dashed border-slate-200 bg-white flex flex-col items-center justify-center text-center px-6">
+          <div class="w-14 h-14 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-center mb-4">
+            <svg viewBox="0 0 24 24" class="w-6 h-6 text-slate-300" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M7 20v-9"></path>
+              <path d="M17 20v-9"></path>
+              <path d="M4 7l4-3 4 3"></path>
+              <path d="M12 7l4-3 4 3"></path>
+              <path d="M4 7h8"></path>
+              <path d="M12 7h8"></path>
+            </svg>
+          </div>
+          <p class="text-xs uppercase tracking-[0.22em] text-slate-300 font-black">Config Empty</p>
+        </div></div>
 
           <div class="mt-4 rounded-3xl bg-slate-100 text-slate-700 p-4 border border-slate-200" data-om-id="d732bfa4:58">
             <p class="text-[11px] uppercase tracking-[0.22em] font-bold text-slate-500" data-om-id="d732bfa4:59">Composite Score</p>
-            <div id="ensemble-score" class="mt-2 text-4xl font-light tracking-tight" data-om-id="d732bfa4:60">88 <span class="text-sm text-slate-500 font-mono">/100</span></div>
+            <div id="ensemble-score" class="mt-2 text-4xl font-light tracking-tight" data-om-id="d732bfa4:60">0 <span class="text-sm text-slate-500 font-mono">/100</span></div>
             <button id="clear-config-btn" type="button" class="mt-4 w-full rounded-2xl bg-white text-slate-700 hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 font-bold py-3 px-4 text-xs tracking-[0.22em] uppercase transition-all border border-slate-200 overflow-hidden whitespace-nowrap text-ellipsis" data-om-id="d732bfa4:62">
               Clear
             </button>
@@ -374,7 +372,7 @@
           <div class="text-[10px] uppercase tracking-[0.18em] font-black text-slate-600">Jackets</div>
         </div>
         <div class="flex items-center gap-3 shrink-0">
-          <span class="rounded-full border px-2.5 py-1 text-[10px] font-mono font-bold bg-slate-100 border-slate-200 text-slate-500">1</span>
+          <span class="rounded-full border px-2.5 py-1 text-[10px] font-mono font-bold bg-slate-100 border-slate-200 text-slate-500">14</span>
           <svg viewBox="0 0 24 24" class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M9 6l6 6-6 6"></path>
           </svg>
@@ -389,13 +387,13 @@
                       <span id="count-under" class="rounded-full bg-white border border-slate-200 px-2.5 py-1 text-[10px] font-mono font-bold text-slate-500" data-om-id="d732bfa4:85">5</span>
                     </div>
                   </div>
-                  <div id="picker-under-list" class="mt-4 space-y-2 overflow-y-auto pr-1 flex-1" data-mobile-collapsed="false" data-om-id="d732bfa4:86"><div class="rounded-2xl border border-slate-200 bg-white overflow-hidden"><button type="button" data-role="accordion-toggle" data-column="under" data-key="Colours" aria-expanded="false" class="w-full flex items-center justify-between gap-3 px-4 py-3 text-left transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-slate-300 hover:bg-slate-50 bg-white opacity-70 hover:opacity-100">
+                  <div id="picker-under-list" class="mt-4 space-y-2 overflow-y-auto pr-1 flex-1" data-mobile-collapsed="false" data-om-id="d732bfa4:86"><div class="rounded-2xl border border-slate-200 bg-white overflow-hidden"><button type="button" data-role="accordion-toggle" data-column="under" data-key="Colours" aria-expanded="false" class="w-full flex items-center justify-between gap-3 px-4 py-3 text-left transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-slate-300 hover:bg-slate-50 bg-slate-50">
         <div class="min-w-0">
-          <div class="text-[10px] uppercase tracking-[0.18em] font-black text-zinc-400">Colours</div>
+          <div class="text-[10px] uppercase tracking-[0.18em] font-black text-slate-600">Colours</div>
         </div>
         <div class="flex items-center gap-3 shrink-0">
-          <span class="rounded-full border px-2.5 py-1 text-[10px] font-mono font-bold bg-white border-slate-200 text-slate-400">0</span>
-          <svg viewBox="0 0 24 24" class="w-4 h-4 text-slate-300" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <span class="rounded-full border px-2.5 py-1 text-[10px] font-mono font-bold bg-slate-100 border-slate-200 text-slate-500">5</span>
+          <svg viewBox="0 0 24 24" class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M9 6l6 6-6 6"></path>
           </svg>
         </div>
@@ -446,7 +444,7 @@
           <div class="text-[10px] uppercase tracking-[0.18em] font-black text-slate-600">Long Sleeve</div>
         </div>
         <div class="flex items-center gap-3 shrink-0">
-          <span class="rounded-full border px-2.5 py-1 text-[10px] font-mono font-bold bg-slate-100 border-slate-200 text-slate-500">9</span>
+          <span class="rounded-full border px-2.5 py-1 text-[10px] font-mono font-bold bg-slate-100 border-slate-200 text-slate-500">10</span>
           <svg viewBox="0 0 24 24" class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M9 6l6 6-6 6"></path>
           </svg>
@@ -461,71 +459,17 @@
             <path d="M9 6l6 6-6 6"></path>
           </svg>
         </div>
-      </button></div><div class="rounded-2xl border border-slate-200 bg-white overflow-hidden"><button type="button" data-role="accordion-toggle" data-column="tops" data-key="Sweater" aria-expanded="true" class="w-full flex items-center justify-between gap-3 px-4 py-3 text-left transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-slate-300 hover:bg-slate-50 bg-slate-100">
+      </button></div><div class="rounded-2xl border border-slate-200 bg-white overflow-hidden"><button type="button" data-role="accordion-toggle" data-column="tops" data-key="Sweater" aria-expanded="false" class="w-full flex items-center justify-between gap-3 px-4 py-3 text-left transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-slate-300 hover:bg-slate-50 bg-slate-50">
         <div class="min-w-0">
-          <div class="text-[10px] uppercase tracking-[0.18em] font-black text-zinc-700">Sweater</div>
+          <div class="text-[10px] uppercase tracking-[0.18em] font-black text-slate-600">Sweater</div>
         </div>
         <div class="flex items-center gap-3 shrink-0">
-          <span class="rounded-full border px-2.5 py-1 text-[10px] font-mono font-bold bg-white border-slate-300 text-slate-600">3</span>
-          <svg viewBox="0 0 24 24" class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M6 9l6 6 6-6"></path>
+          <span class="rounded-full border px-2.5 py-1 text-[10px] font-mono font-bold bg-slate-100 border-slate-200 text-slate-500">3</span>
+          <svg viewBox="0 0 24 24" class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 6l6 6-6 6"></path>
           </svg>
         </div>
-      </button><div class="border-t border-slate-200 px-2 py-2 space-y-2 bg-slate-50/50"><button type="button" data-role="picker-item" data-slot="top" data-id="g69" aria-pressed="false" title="Fjällräven 1960 Logo Badge Sweater" class="w-full rounded-2xl border p-3 text-left transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 bg-white border-slate-200 hover:border-slate-300 opacity-100">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-center shrink-0 overflow-hidden">
-            <div class="w-8 h-8"><div class="w-full h-full" aria-label="Fjällräven 1960 Logo Badge Sweater">
-        <svg viewBox="0 0 100 100" class="w-full h-full" fill="none" aria-hidden="true">
-          <path d="M41 18.5 Q50 26 59 18.5 L69 23 Q73.2 24.8 74 29 L77.9 62.7 Q78.3 66.2 74.8 66.9 L72.3 67.4 Q69.6 67.9 69.2 65.2 L67 39 L64.5 41.5 V78.5 Q64.5 83 60 83 H40 Q35.5 83 35.5 78.5 V41.5 L33 39 L30.8 65.2 Q30.4 67.9 27.7 67.4 L25.2 66.9 Q21.7 66.2 22.1 62.7 L26 29 Q26.8 24.8 31 23 Z" fill="#18181b" stroke="#79797b" stroke-width="1.5" stroke-linejoin="round"></path>
-          <path d="M43.4 21.9 Q50 27.9 56.6 21.9" stroke="#79797b" stroke-width="0.75" stroke-linecap="round" opacity="0.5"></path>
-          <path d="M42 20.2 Q50 27.4 58 20.2" stroke="#79797b" stroke-width="0.75" stroke-linecap="round" opacity="0.5"></path>
-          <path d="M69.6 61.4 L77.7 60 M30.4 61.4 L22.3 60" stroke="#79797b" stroke-width="0.75" stroke-linecap="round" opacity="0.5"></path>
-          <path d="M37.4 76.8 H62.6 M37.8 79.8 H62.2" stroke="#79797b" stroke-width="0.75" stroke-linecap="round" opacity="0.4"></path>
-        </svg>
-      </div></div>
-          </div>
-          <div class="min-w-0 flex-1">
-            <div class="truncate text-[11px] uppercase tracking-[0.18em] font-black text-zinc-600" title="Fjällräven 1960 Logo Badge Sweater">Fjällräven 1960 Logo Badge Sweater</div>
-            <div class="mt-1 text-[10px] uppercase tracking-[0.18em] text-slate-400 font-bold">Sweater</div>
-          </div>
-        </div>
-      </button><button type="button" data-role="picker-item" data-slot="top" data-id="g70" aria-pressed="false" title="Merz b. Schwanen 346 Loopwheeled Sweatshirt, 12oz, Classic Fit" class="w-full rounded-2xl border p-3 text-left transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 bg-white border-slate-200 hover:border-slate-300 opacity-100">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-center shrink-0 overflow-hidden">
-            <div class="w-8 h-8"><div class="w-full h-full" aria-label="Merz b. Schwanen 346 Loopwheeled Sweatshirt, 12oz, Classic Fit">
-        <svg viewBox="0 0 100 100" class="w-full h-full" fill="none" aria-hidden="true">
-          <path d="M41 18.5 Q50 26 59 18.5 L69 23 Q73.2 24.8 74 29 L77.9 62.7 Q78.3 66.2 74.8 66.9 L72.3 67.4 Q69.6 67.9 69.2 65.2 L67 39 L64.5 41.5 V78.5 Q64.5 83 60 83 H40 Q35.5 83 35.5 78.5 V41.5 L33 39 L30.8 65.2 Q30.4 67.9 27.7 67.4 L25.2 66.9 Q21.7 66.2 22.1 62.7 L26 29 Q26.8 24.8 31 23 Z" fill="#18181b" stroke="#79797b" stroke-width="1.5" stroke-linejoin="round"></path>
-          <path d="M43.4 21.9 Q50 27.9 56.6 21.9" stroke="#79797b" stroke-width="0.75" stroke-linecap="round" opacity="0.5"></path>
-          <path d="M42 20.2 Q50 27.4 58 20.2" stroke="#79797b" stroke-width="0.75" stroke-linecap="round" opacity="0.5"></path>
-          <path d="M69.6 61.4 L77.7 60 M30.4 61.4 L22.3 60" stroke="#79797b" stroke-width="0.75" stroke-linecap="round" opacity="0.5"></path>
-          <path d="M37.4 76.8 H62.6 M37.8 79.8 H62.2" stroke="#79797b" stroke-width="0.75" stroke-linecap="round" opacity="0.4"></path>
-        </svg>
-      </div></div>
-          </div>
-          <div class="min-w-0 flex-1">
-            <div class="truncate text-[11px] uppercase tracking-[0.18em] font-black text-zinc-600" title="Merz b. Schwanen 346 Loopwheeled Sweatshirt, 12oz, Classic Fit">Merz b. Schwanen 346 Loopwheeled Sweatshirt, 12oz, Classic Fit</div>
-            <div class="mt-1 text-[10px] uppercase tracking-[0.18em] text-slate-400 font-bold">Sweater</div>
-          </div>
-        </div>
-      </button><button type="button" data-role="picker-item" data-slot="top" data-id="g71" aria-pressed="false" title="Uniqlo Sweatshirt" class="w-full rounded-2xl border p-3 text-left transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 bg-white border-slate-200 hover:border-slate-300 opacity-100">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-center shrink-0 overflow-hidden">
-            <div class="w-8 h-8"><div class="w-full h-full" aria-label="Uniqlo Sweatshirt">
-        <svg viewBox="0 0 100 100" class="w-full h-full" fill="none" aria-hidden="true">
-          <path d="M41 18.5 Q50 26 59 18.5 L69 23 Q73.2 24.8 74 29 L77.9 62.7 Q78.3 66.2 74.8 66.9 L72.3 67.4 Q69.6 67.9 69.2 65.2 L67 39 L64.5 41.5 V78.5 Q64.5 83 60 83 H40 Q35.5 83 35.5 78.5 V41.5 L33 39 L30.8 65.2 Q30.4 67.9 27.7 67.4 L25.2 66.9 Q21.7 66.2 22.1 62.7 L26 29 Q26.8 24.8 31 23 Z" fill="#fbcfe8" stroke="#a18494" stroke-width="1.5" stroke-linejoin="round"></path>
-          <path d="M43.4 21.9 Q50 27.9 56.6 21.9" stroke="#a18494" stroke-width="0.75" stroke-linecap="round" opacity="0.5"></path>
-          <path d="M42 20.2 Q50 27.4 58 20.2" stroke="#a18494" stroke-width="0.75" stroke-linecap="round" opacity="0.5"></path>
-          <path d="M69.6 61.4 L77.7 60 M30.4 61.4 L22.3 60" stroke="#a18494" stroke-width="0.75" stroke-linecap="round" opacity="0.5"></path>
-          <path d="M37.4 76.8 H62.6 M37.8 79.8 H62.2" stroke="#a18494" stroke-width="0.75" stroke-linecap="round" opacity="0.4"></path>
-        </svg>
-      </div></div>
-          </div>
-          <div class="min-w-0 flex-1">
-            <div class="truncate text-[11px] uppercase tracking-[0.18em] font-black text-zinc-600" title="Uniqlo Sweatshirt">Uniqlo Sweatshirt</div>
-            <div class="mt-1 text-[10px] uppercase tracking-[0.18em] text-slate-400 font-bold">Sweater</div>
-          </div>
-        </div>
-      </button></div></div><div class="rounded-2xl border border-slate-200 bg-white overflow-hidden"><button type="button" data-role="accordion-toggle" data-column="tops" data-key="T-Shirt" aria-expanded="false" class="w-full flex items-center justify-between gap-3 px-4 py-3 text-left transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-slate-300 hover:bg-slate-50 bg-slate-50">
+      </button></div><div class="rounded-2xl border border-slate-200 bg-white overflow-hidden"><button type="button" data-role="accordion-toggle" data-column="tops" data-key="T-Shirt" aria-expanded="false" class="w-full flex items-center justify-between gap-3 px-4 py-3 text-left transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-slate-300 hover:bg-slate-50 bg-slate-50">
         <div class="min-w-0">
           <div class="text-[10px] uppercase tracking-[0.18em] font-black text-slate-600">T-Shirt</div>
         </div>
@@ -545,131 +489,23 @@
                   <span id="count-bottoms" class="rounded-full bg-white border border-slate-200 px-2.5 py-1 text-[10px] font-mono font-bold text-slate-500" data-om-id="d732bfa4:459">10</span>
                 </div>
               </div>
-              <div id="picker-bottoms-list" class="mt-4 space-y-2 overflow-y-auto pr-1 flex-1" data-om-id="d732bfa4:460"><div class="rounded-2xl border border-slate-200 bg-white overflow-hidden"><button type="button" data-role="accordion-toggle" data-column="bottoms" data-key="Pants" aria-expanded="true" class="w-full flex items-center justify-between gap-3 px-4 py-3 text-left transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-slate-300 hover:bg-slate-50 bg-slate-100">
+              <div id="picker-bottoms-list" class="mt-4 space-y-2 overflow-y-auto pr-1 flex-1" data-om-id="d732bfa4:460"><div class="rounded-2xl border border-slate-200 bg-white overflow-hidden"><button type="button" data-role="accordion-toggle" data-column="bottoms" data-key="Pants" aria-expanded="false" class="w-full flex items-center justify-between gap-3 px-4 py-3 text-left transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-slate-300 hover:bg-slate-50 bg-slate-50">
         <div class="min-w-0">
-          <div class="text-[10px] uppercase tracking-[0.18em] font-black text-zinc-700">Pants</div>
+          <div class="text-[10px] uppercase tracking-[0.18em] font-black text-slate-600">Pants</div>
         </div>
         <div class="flex items-center gap-3 shrink-0">
-          <span class="rounded-full border px-2.5 py-1 text-[10px] font-mono font-bold bg-white border-slate-300 text-slate-600">2</span>
-          <svg viewBox="0 0 24 24" class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M6 9l6 6 6-6"></path>
+          <span class="rounded-full border px-2.5 py-1 text-[10px] font-mono font-bold bg-slate-100 border-slate-200 text-slate-500">6</span>
+          <svg viewBox="0 0 24 24" class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 6l6 6-6 6"></path>
           </svg>
         </div>
-      </button><div class="border-t border-slate-200 px-2 py-2 space-y-2 bg-slate-50/50"><button type="button" data-role="picker-item" data-slot="bottom" data-id="g47" aria-pressed="false" title="Amazon Essentials Mens Skinny-fit Stretch Jeans" class="w-full rounded-2xl border p-3 text-left transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 bg-white border-slate-200 hover:border-slate-300 opacity-100">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-center shrink-0 overflow-hidden">
-            <div class="w-8 h-8"><div class="w-full h-full" aria-label="Amazon Essentials Mens Skinny-fit Stretch Jeans">
-        <svg viewBox="0 0 100 100" class="w-full h-full" fill="none" aria-hidden="true">
-          <path d="M37 13.5 H63 Q64.5 13.5 64.8 15 L66.3 26 L62 88.3 Q61.9 90 60.2 90 H54.2 Q52.6 90 52.5 88.4 L50 49 L47.5 88.4 Q47.4 90 45.8 90 H39.8 Q38.1 90 38 88.3 L33.7 26 L35.2 15 Q35.5 13.5 37 13.5 Z" fill="#2563eb" stroke="#81a5f3" stroke-width="1.5" stroke-linejoin="round"></path>
-          <path d="M34.6 21 H65.4" stroke="#81a5f3" stroke-width="1.5" stroke-linecap="round"></path>
-          <path d="M50 21 V30.5" stroke="#81a5f3" stroke-width="0.75" stroke-linecap="round" opacity="0.5"></path>
-          <circle cx="50" cy="17.2" r="1.2" fill="#81a5f3" opacity="0.85"></circle>
-          <path d="M37.2 25.5 L41.5 30 M62.8 25.5 L58.5 30" stroke="#81a5f3" stroke-width="0.75" stroke-linecap="round" opacity="0.45"></path>
-        </svg>
-      </div></div>
-          </div>
-          <div class="min-w-0 flex-1">
-            <div class="truncate text-[11px] uppercase tracking-[0.18em] font-black text-zinc-600" title="Amazon Essentials Mens Skinny-fit Stretch Jeans">Amazon Essentials Mens Skinny-fit Stretch Jeans</div>
-            <div class="mt-1 text-[10px] uppercase tracking-[0.18em] text-slate-400 font-bold">Pants</div>
-          </div>
-        </div>
-      </button><button type="button" data-role="picker-item" data-slot="bottom" data-id="g48" aria-pressed="false" title="Levi's 510" class="w-full rounded-2xl border p-3 text-left transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 bg-white border-slate-200 hover:border-slate-300 opacity-100">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-center shrink-0 overflow-hidden">
-            <div class="w-8 h-8"><div class="w-full h-full" aria-label="Levi's 510">
-        <svg viewBox="0 0 100 100" class="w-full h-full" fill="none" aria-hidden="true">
-          <path d="M37 13.5 H63 Q64.5 13.5 64.8 15 L66.3 26 L62 88.3 Q61.9 90 60.2 90 H54.2 Q52.6 90 52.5 88.4 L50 49 L47.5 88.4 Q47.4 90 45.8 90 H39.8 Q38.1 90 38 88.3 L33.7 26 L35.2 15 Q35.5 13.5 37 13.5 Z" fill="#18181b" stroke="#79797b" stroke-width="1.5" stroke-linejoin="round"></path>
-          <path d="M34.6 21 H65.4" stroke="#79797b" stroke-width="1.5" stroke-linecap="round"></path>
-          <path d="M50 21 V30.5" stroke="#79797b" stroke-width="0.75" stroke-linecap="round" opacity="0.5"></path>
-          <circle cx="50" cy="17.2" r="1.2" fill="#79797b" opacity="0.85"></circle>
-          <path d="M37.2 25.5 L41.5 30 M62.8 25.5 L58.5 30" stroke="#79797b" stroke-width="0.75" stroke-linecap="round" opacity="0.45"></path>
-        </svg>
-      </div></div>
-          </div>
-          <div class="min-w-0 flex-1">
-            <div class="truncate text-[11px] uppercase tracking-[0.18em] font-black text-zinc-600" title="Levi's 510">Levi's 510</div>
-            <div class="mt-1 text-[10px] uppercase tracking-[0.18em] text-slate-400 font-bold">Pants</div>
-          </div>
-        </div>
-      </button><button type="button" data-role="picker-item" data-slot="bottom" data-id="g49" aria-pressed="false" title="Levi's 512" class="w-full rounded-2xl border p-3 text-left transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 bg-white border-slate-200 hover:border-slate-300 opacity-25 hover:opacity-100 grayscale hover:grayscale-0">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-center shrink-0 overflow-hidden">
-            <div class="w-8 h-8"><div class="w-full h-full" aria-label="Levi's 512">
-        <svg viewBox="0 0 100 100" class="w-full h-full" fill="none" aria-hidden="true">
-          <path d="M37 13.5 H63 Q64.5 13.5 64.8 15 L66.3 26 L62 88.3 Q61.9 90 60.2 90 H54.2 Q52.6 90 52.5 88.4 L50 49 L47.5 88.4 Q47.4 90 45.8 90 H39.8 Q38.1 90 38 88.3 L33.7 26 L35.2 15 Q35.5 13.5 37 13.5 Z" fill="#2563eb" stroke="#81a5f3" stroke-width="1.5" stroke-linejoin="round"></path>
-          <path d="M34.6 21 H65.4" stroke="#81a5f3" stroke-width="1.5" stroke-linecap="round"></path>
-          <path d="M50 21 V30.5" stroke="#81a5f3" stroke-width="0.75" stroke-linecap="round" opacity="0.5"></path>
-          <circle cx="50" cy="17.2" r="1.2" fill="#81a5f3" opacity="0.85"></circle>
-          <path d="M37.2 25.5 L41.5 30 M62.8 25.5 L58.5 30" stroke="#81a5f3" stroke-width="0.75" stroke-linecap="round" opacity="0.45"></path>
-        </svg>
-      </div></div>
-          </div>
-          <div class="min-w-0 flex-1">
-            <div class="truncate text-[11px] uppercase tracking-[0.18em] font-black text-zinc-600" title="Levi's 512">Levi's 512</div>
-            <div class="mt-1 text-[10px] uppercase tracking-[0.18em] text-slate-400 font-bold">Pants</div>
-          </div>
-        </div>
-      </button><button type="button" data-role="picker-item" data-slot="bottom" data-id="g50" aria-pressed="false" title="Naked &amp; Famous SuperGuy Nightshade Stretch Selvedge" class="w-full rounded-2xl border p-3 text-left transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 bg-white border-slate-200 hover:border-slate-300 opacity-25 hover:opacity-100 grayscale hover:grayscale-0">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-center shrink-0 overflow-hidden">
-            <div class="w-8 h-8"><div class="w-full h-full" aria-label="Naked &amp; Famous SuperGuy Nightshade Stretch Selvedge">
-        <svg viewBox="0 0 100 100" class="w-full h-full" fill="none" aria-hidden="true">
-          <path d="M37 13.5 H63 Q64.5 13.5 64.8 15 L66.3 26 L62 88.3 Q61.9 90 60.2 90 H54.2 Q52.6 90 52.5 88.4 L50 49 L47.5 88.4 Q47.4 90 45.8 90 H39.8 Q38.1 90 38 88.3 L33.7 26 L35.2 15 Q35.5 13.5 37 13.5 Z" fill="#1e3a8a" stroke="#7d8dbb" stroke-width="1.5" stroke-linejoin="round"></path>
-          <path d="M34.6 21 H65.4" stroke="#7d8dbb" stroke-width="1.5" stroke-linecap="round"></path>
-          <path d="M50 21 V30.5" stroke="#7d8dbb" stroke-width="0.75" stroke-linecap="round" opacity="0.5"></path>
-          <circle cx="50" cy="17.2" r="1.2" fill="#7d8dbb" opacity="0.85"></circle>
-          <path d="M37.2 25.5 L41.5 30 M62.8 25.5 L58.5 30" stroke="#7d8dbb" stroke-width="0.75" stroke-linecap="round" opacity="0.45"></path>
-        </svg>
-      </div></div>
-          </div>
-          <div class="min-w-0 flex-1">
-            <div class="truncate text-[11px] uppercase tracking-[0.18em] font-black text-zinc-600" title="Naked &amp; Famous SuperGuy Nightshade Stretch Selvedge">Naked &amp; Famous SuperGuy Nightshade Stretch Selvedge</div>
-            <div class="mt-1 text-[10px] uppercase tracking-[0.18em] text-slate-400 font-bold">Pants</div>
-          </div>
-        </div>
-      </button><button type="button" data-role="picker-item" data-slot="bottom" data-id="g52" aria-pressed="false" title="The Unbranded Brand UUB244 Tapered Fit 11oz Stretch Selvedge" class="w-full rounded-2xl border p-3 text-left transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 bg-white border-slate-200 hover:border-slate-300 opacity-25 hover:opacity-100 grayscale hover:grayscale-0">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-center shrink-0 overflow-hidden">
-            <div class="w-8 h-8"><div class="w-full h-full" aria-label="The Unbranded Brand UUB244 Tapered Fit 11oz Stretch Selvedge">
-        <svg viewBox="0 0 100 100" class="w-full h-full" fill="none" aria-hidden="true">
-          <path d="M37 13.5 H63 Q64.5 13.5 64.8 15 L66.3 26 L62 88.3 Q61.9 90 60.2 90 H54.2 Q52.6 90 52.5 88.4 L50 49 L47.5 88.4 Q47.4 90 45.8 90 H39.8 Q38.1 90 38 88.3 L33.7 26 L35.2 15 Q35.5 13.5 37 13.5 Z" fill="#18181b" stroke="#79797b" stroke-width="1.5" stroke-linejoin="round"></path>
-          <path d="M34.6 21 H65.4" stroke="#79797b" stroke-width="1.5" stroke-linecap="round"></path>
-          <path d="M50 21 V30.5" stroke="#79797b" stroke-width="0.75" stroke-linecap="round" opacity="0.5"></path>
-          <circle cx="50" cy="17.2" r="1.2" fill="#79797b" opacity="0.85"></circle>
-          <path d="M37.2 25.5 L41.5 30 M62.8 25.5 L58.5 30" stroke="#79797b" stroke-width="0.75" stroke-linecap="round" opacity="0.45"></path>
-        </svg>
-      </div></div>
-          </div>
-          <div class="min-w-0 flex-1">
-            <div class="truncate text-[11px] uppercase tracking-[0.18em] font-black text-zinc-600" title="The Unbranded Brand UUB244 Tapered Fit 11oz Stretch Selvedge">The Unbranded Brand UUB244 Tapered Fit 11oz Stretch Selvedge</div>
-            <div class="mt-1 text-[10px] uppercase tracking-[0.18em] text-slate-400 font-bold">Pants</div>
-          </div>
-        </div>
-      </button><button type="button" data-role="picker-item" data-slot="bottom" data-id="g53" aria-pressed="false" title="Zara Skinny Fit Chino Pants" class="w-full rounded-2xl border p-3 text-left transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 bg-white border-slate-200 hover:border-slate-300 opacity-25 hover:opacity-100 grayscale hover:grayscale-0">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-center shrink-0 overflow-hidden">
-            <div class="w-8 h-8"><div class="w-full h-full" aria-label="Zara Skinny Fit Chino Pants">
-        <svg viewBox="0 0 100 100" class="w-full h-full" fill="none" aria-hidden="true">
-          <path d="M37 13.5 H63 Q64.5 13.5 64.8 15 L66.3 26 L62 88.3 Q61.9 90 60.2 90 H54.2 Q52.6 90 52.5 88.4 L50 49 L47.5 88.4 Q47.4 90 45.8 90 H39.8 Q38.1 90 38 88.3 L33.7 26 L35.2 15 Q35.5 13.5 37 13.5 Z" fill="#c68642" stroke="#7f562a" stroke-width="1.5" stroke-linejoin="round"></path>
-          <path d="M34.6 21 H65.4" stroke="#7f562a" stroke-width="1.5" stroke-linecap="round"></path>
-          <path d="M50 21 V30.5" stroke="#7f562a" stroke-width="0.75" stroke-linecap="round" opacity="0.5"></path>
-          <circle cx="50" cy="17.2" r="1.2" fill="#7f562a" opacity="0.85"></circle>
-          <path d="M37.2 25.5 L41.5 30 M62.8 25.5 L58.5 30" stroke="#7f562a" stroke-width="0.75" stroke-linecap="round" opacity="0.45"></path>
-        </svg>
-      </div></div>
-          </div>
-          <div class="min-w-0 flex-1">
-            <div class="truncate text-[11px] uppercase tracking-[0.18em] font-black text-zinc-600" title="Zara Skinny Fit Chino Pants">Zara Skinny Fit Chino Pants</div>
-            <div class="mt-1 text-[10px] uppercase tracking-[0.18em] text-slate-400 font-bold">Pants</div>
-          </div>
-        </div>
-      </button></div></div><div class="rounded-2xl border border-slate-200 bg-white overflow-hidden"><button type="button" data-role="accordion-toggle" data-column="bottoms" data-key="Shorts" aria-expanded="false" class="w-full flex items-center justify-between gap-3 px-4 py-3 text-left transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-slate-300 hover:bg-slate-50 bg-white opacity-70 hover:opacity-100">
+      </button></div><div class="rounded-2xl border border-slate-200 bg-white overflow-hidden"><button type="button" data-role="accordion-toggle" data-column="bottoms" data-key="Shorts" aria-expanded="false" class="w-full flex items-center justify-between gap-3 px-4 py-3 text-left transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-slate-300 hover:bg-slate-50 bg-slate-50">
         <div class="min-w-0">
-          <div class="text-[10px] uppercase tracking-[0.18em] font-black text-zinc-400">Shorts</div>
+          <div class="text-[10px] uppercase tracking-[0.18em] font-black text-slate-600">Shorts</div>
         </div>
         <div class="flex items-center gap-3 shrink-0">
-          <span class="rounded-full border px-2.5 py-1 text-[10px] font-mono font-bold bg-white border-slate-200 text-slate-400">0</span>
-          <svg viewBox="0 0 24 24" class="w-4 h-4 text-slate-300" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <span class="rounded-full border px-2.5 py-1 text-[10px] font-mono font-bold bg-slate-100 border-slate-200 text-slate-500">4</span>
+          <svg viewBox="0 0 24 24" class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M9 6l6 6-6 6"></path>
           </svg>
         </div>
@@ -683,173 +519,47 @@
                   <span id="count-shoes" class="rounded-full bg-white border border-slate-200 px-2.5 py-1 text-[10px] font-mono font-bold text-slate-500" data-om-id="d732bfa4:559">15</span>
                 </div>
               </div>
-              <div id="picker-shoes-list" class="mt-4 space-y-2 overflow-y-auto pr-1 flex-1" data-om-id="d732bfa4:560"><div class="rounded-2xl border border-slate-200 bg-white overflow-hidden"><button type="button" data-role="accordion-toggle" data-column="shoes" data-key="Boot" aria-expanded="false" class="w-full flex items-center justify-between gap-3 px-4 py-3 text-left transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-slate-300 hover:bg-slate-50 bg-white opacity-70 hover:opacity-100">
+              <div id="picker-shoes-list" class="mt-4 space-y-2 overflow-y-auto pr-1 flex-1" data-om-id="d732bfa4:560"><div class="rounded-2xl border border-slate-200 bg-white overflow-hidden"><button type="button" data-role="accordion-toggle" data-column="shoes" data-key="Boot" aria-expanded="false" class="w-full flex items-center justify-between gap-3 px-4 py-3 text-left transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-slate-300 hover:bg-slate-50 bg-slate-50">
         <div class="min-w-0">
-          <div class="text-[10px] uppercase tracking-[0.18em] font-black text-zinc-400">Boot</div>
+          <div class="text-[10px] uppercase tracking-[0.18em] font-black text-slate-600">Boot</div>
         </div>
         <div class="flex items-center gap-3 shrink-0">
-          <span class="rounded-full border px-2.5 py-1 text-[10px] font-mono font-bold bg-white border-slate-200 text-slate-400">0</span>
-          <svg viewBox="0 0 24 24" class="w-4 h-4 text-slate-300" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <span class="rounded-full border px-2.5 py-1 text-[10px] font-mono font-bold bg-slate-100 border-slate-200 text-slate-500">5</span>
+          <svg viewBox="0 0 24 24" class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M9 6l6 6-6 6"></path>
           </svg>
         </div>
-      </button></div><div class="rounded-2xl border border-slate-200 bg-white overflow-hidden"><button type="button" data-role="accordion-toggle" data-column="shoes" data-key="Loafer" aria-expanded="false" class="w-full flex items-center justify-between gap-3 px-4 py-3 text-left transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-slate-300 hover:bg-slate-50 bg-white opacity-70 hover:opacity-100">
+      </button></div><div class="rounded-2xl border border-slate-200 bg-white overflow-hidden"><button type="button" data-role="accordion-toggle" data-column="shoes" data-key="Loafer" aria-expanded="false" class="w-full flex items-center justify-between gap-3 px-4 py-3 text-left transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-slate-300 hover:bg-slate-50 bg-slate-50">
         <div class="min-w-0">
-          <div class="text-[10px] uppercase tracking-[0.18em] font-black text-zinc-400">Loafer</div>
+          <div class="text-[10px] uppercase tracking-[0.18em] font-black text-slate-600">Loafer</div>
         </div>
         <div class="flex items-center gap-3 shrink-0">
-          <span class="rounded-full border px-2.5 py-1 text-[10px] font-mono font-bold bg-white border-slate-200 text-slate-400">0</span>
-          <svg viewBox="0 0 24 24" class="w-4 h-4 text-slate-300" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <span class="rounded-full border px-2.5 py-1 text-[10px] font-mono font-bold bg-slate-100 border-slate-200 text-slate-500">1</span>
+          <svg viewBox="0 0 24 24" class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M9 6l6 6-6 6"></path>
           </svg>
         </div>
-      </button></div><div class="rounded-2xl border border-slate-200 bg-white overflow-hidden"><button type="button" data-role="accordion-toggle" data-column="shoes" data-key="Sandal" aria-expanded="false" class="w-full flex items-center justify-between gap-3 px-4 py-3 text-left transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-slate-300 hover:bg-slate-50 bg-white opacity-70 hover:opacity-100">
+      </button></div><div class="rounded-2xl border border-slate-200 bg-white overflow-hidden"><button type="button" data-role="accordion-toggle" data-column="shoes" data-key="Sandal" aria-expanded="false" class="w-full flex items-center justify-between gap-3 px-4 py-3 text-left transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-slate-300 hover:bg-slate-50 bg-slate-50">
         <div class="min-w-0">
-          <div class="text-[10px] uppercase tracking-[0.18em] font-black text-zinc-400">Sandal</div>
+          <div class="text-[10px] uppercase tracking-[0.18em] font-black text-slate-600">Sandal</div>
         </div>
         <div class="flex items-center gap-3 shrink-0">
-          <span class="rounded-full border px-2.5 py-1 text-[10px] font-mono font-bold bg-white border-slate-200 text-slate-400">0</span>
-          <svg viewBox="0 0 24 24" class="w-4 h-4 text-slate-300" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <span class="rounded-full border px-2.5 py-1 text-[10px] font-mono font-bold bg-slate-100 border-slate-200 text-slate-500">2</span>
+          <svg viewBox="0 0 24 24" class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M9 6l6 6-6 6"></path>
           </svg>
         </div>
-      </button></div><div class="rounded-2xl border border-slate-200 bg-white overflow-hidden"><button type="button" data-role="accordion-toggle" data-column="shoes" data-key="Sneaker" aria-expanded="true" class="w-full flex items-center justify-between gap-3 px-4 py-3 text-left transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-slate-300 hover:bg-slate-50 bg-slate-100">
+      </button></div><div class="rounded-2xl border border-slate-200 bg-white overflow-hidden"><button type="button" data-role="accordion-toggle" data-column="shoes" data-key="Sneaker" aria-expanded="false" class="w-full flex items-center justify-between gap-3 px-4 py-3 text-left transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-slate-300 hover:bg-slate-50 bg-slate-50">
         <div class="min-w-0">
-          <div class="text-[10px] uppercase tracking-[0.18em] font-black text-zinc-700">Sneaker</div>
+          <div class="text-[10px] uppercase tracking-[0.18em] font-black text-slate-600">Sneaker</div>
         </div>
         <div class="flex items-center gap-3 shrink-0">
-          <span class="rounded-full border px-2.5 py-1 text-[10px] font-mono font-bold bg-white border-slate-300 text-slate-600">1</span>
-          <svg viewBox="0 0 24 24" class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M6 9l6 6 6-6"></path>
+          <span class="rounded-full border px-2.5 py-1 text-[10px] font-mono font-bold bg-slate-100 border-slate-200 text-slate-500">7</span>
+          <svg viewBox="0 0 24 24" class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 6l6 6-6 6"></path>
           </svg>
         </div>
-      </button><div class="border-t border-slate-200 px-2 py-2 space-y-2 bg-slate-50/50"><button type="button" data-role="picker-item" data-slot="shoe" data-id="g62" aria-pressed="false" title="New Balance Suede" class="w-full rounded-2xl border p-3 text-left transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 bg-white border-slate-200 hover:border-slate-300 opacity-25 hover:opacity-100 grayscale hover:grayscale-0">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-center shrink-0 overflow-hidden">
-            <div class="w-8 h-8"><div class="w-full h-full" aria-label="New Balance Suede">
-        <svg viewBox="0 0 100 100" class="w-full h-full" fill="none" aria-hidden="true">
-          <path d="M15.5 77 Q15.5 80 18.5 80 H84.5 Q88.5 80 88.5 76.2 Q88.5 70.8 82.2 69 L65.5 64.2 Q62.3 63.3 59.7 61.1 L50.5 53.4 Q48.3 51.6 45.5 52.3 L21.5 58.3 Q15.5 59.8 15.5 66 Z" fill="#18181b" stroke="#79797b" stroke-width="1.5" stroke-linejoin="round"></path>
-          <path d="M15.5 75.7 H88.3" stroke="#79797b" stroke-width="1.5" stroke-linecap="round"></path>
-          <path d="M38 63.5 L44 57.5 M43.5 65 L49.5 59 M49 66.5 L55 60.5" stroke="#79797b" stroke-width="0.75" stroke-linecap="round" opacity="0.5"></path>
-          <path d="M22 60.5 Q19.5 65 19.5 70" stroke="#79797b" stroke-width="0.75" stroke-linecap="round" opacity="0.4"></path>
-          <path d="M74 70.5 Q79 71.6 82.5 74.5" stroke="#79797b" stroke-width="0.75" stroke-linecap="round" opacity="0.4"></path>
-        </svg>
-      </div></div>
-          </div>
-          <div class="min-w-0 flex-1">
-            <div class="truncate text-[11px] uppercase tracking-[0.18em] font-black text-zinc-600" title="New Balance Suede">New Balance Suede</div>
-            <div class="mt-1 text-[10px] uppercase tracking-[0.18em] text-slate-400 font-bold">Sneaker</div>
-          </div>
-        </div>
-      </button><button type="button" data-role="picker-item" data-slot="shoe" data-id="g63" aria-pressed="false" title="ON Mesh" class="w-full rounded-2xl border p-3 text-left transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 bg-white border-slate-200 hover:border-slate-300 opacity-25 hover:opacity-100 grayscale hover:grayscale-0">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-center shrink-0 overflow-hidden">
-            <div class="w-8 h-8"><div class="w-full h-full" aria-label="ON Mesh">
-        <svg viewBox="0 0 100 100" class="w-full h-full" fill="none" aria-hidden="true">
-          <path d="M15.5 77 Q15.5 80 18.5 80 H84.5 Q88.5 80 88.5 76.2 Q88.5 70.8 82.2 69 L65.5 64.2 Q62.3 63.3 59.7 61.1 L50.5 53.4 Q48.3 51.6 45.5 52.3 L21.5 58.3 Q15.5 59.8 15.5 66 Z" fill="#86efac" stroke="#56996e" stroke-width="1.5" stroke-linejoin="round"></path>
-          <path d="M15.5 75.7 H88.3" stroke="#56996e" stroke-width="1.5" stroke-linecap="round"></path>
-          <path d="M38 63.5 L44 57.5 M43.5 65 L49.5 59 M49 66.5 L55 60.5" stroke="#56996e" stroke-width="0.75" stroke-linecap="round" opacity="0.5"></path>
-          <path d="M22 60.5 Q19.5 65 19.5 70" stroke="#56996e" stroke-width="0.75" stroke-linecap="round" opacity="0.4"></path>
-          <path d="M74 70.5 Q79 71.6 82.5 74.5" stroke="#56996e" stroke-width="0.75" stroke-linecap="round" opacity="0.4"></path>
-        </svg>
-      </div></div>
-          </div>
-          <div class="min-w-0 flex-1">
-            <div class="truncate text-[11px] uppercase tracking-[0.18em] font-black text-zinc-600" title="ON Mesh">ON Mesh</div>
-            <div class="mt-1 text-[10px] uppercase tracking-[0.18em] text-slate-400 font-bold">Sneaker</div>
-          </div>
-        </div>
-      </button><button type="button" data-role="picker-item" data-slot="shoe" data-id="g64" aria-pressed="false" title="Osklen Low Top Leather" class="w-full rounded-2xl border p-3 text-left transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 bg-white border-slate-200 hover:border-slate-300 opacity-25 hover:opacity-100 grayscale hover:grayscale-0">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-center shrink-0 overflow-hidden">
-            <div class="w-8 h-8"><div class="w-full h-full" aria-label="Osklen Low Top Leather">
-        <svg viewBox="0 0 100 100" class="w-full h-full" fill="none" aria-hidden="true">
-          <path d="M15.5 77 Q15.5 80 18.5 80 H84.5 Q88.5 80 88.5 76.2 Q88.5 70.8 82.2 69 L65.5 64.2 Q62.3 63.3 59.7 61.1 L50.5 53.4 Q48.3 51.6 45.5 52.3 L21.5 58.3 Q15.5 59.8 15.5 66 Z" fill="#18181b" stroke="#79797b" stroke-width="1.5" stroke-linejoin="round"></path>
-          <path d="M15.5 75.7 H88.3" stroke="#79797b" stroke-width="1.5" stroke-linecap="round"></path>
-          <path d="M38 63.5 L44 57.5 M43.5 65 L49.5 59 M49 66.5 L55 60.5" stroke="#79797b" stroke-width="0.75" stroke-linecap="round" opacity="0.5"></path>
-          <path d="M22 60.5 Q19.5 65 19.5 70" stroke="#79797b" stroke-width="0.75" stroke-linecap="round" opacity="0.4"></path>
-          <path d="M74 70.5 Q79 71.6 82.5 74.5" stroke="#79797b" stroke-width="0.75" stroke-linecap="round" opacity="0.4"></path>
-        </svg>
-      </div></div>
-          </div>
-          <div class="min-w-0 flex-1">
-            <div class="truncate text-[11px] uppercase tracking-[0.18em] font-black text-zinc-600" title="Osklen Low Top Leather">Osklen Low Top Leather</div>
-            <div class="mt-1 text-[10px] uppercase tracking-[0.18em] text-slate-400 font-bold">Sneaker</div>
-          </div>
-        </div>
-      </button><button type="button" data-role="picker-item" data-slot="shoe" data-id="g65" aria-pressed="false" title="Osklen Low Top Suede" class="w-full rounded-2xl border p-3 text-left transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 bg-white border-slate-200 hover:border-slate-300 opacity-25 hover:opacity-100 grayscale hover:grayscale-0">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-center shrink-0 overflow-hidden">
-            <div class="w-8 h-8"><div class="w-full h-full" aria-label="Osklen Low Top Suede">
-        <svg viewBox="0 0 100 100" class="w-full h-full" fill="none" aria-hidden="true">
-          <path d="M15.5 77 Q15.5 80 18.5 80 H84.5 Q88.5 80 88.5 76.2 Q88.5 70.8 82.2 69 L65.5 64.2 Q62.3 63.3 59.7 61.1 L50.5 53.4 Q48.3 51.6 45.5 52.3 L21.5 58.3 Q15.5 59.8 15.5 66 Z" fill="#71717a" stroke="#48484e" stroke-width="1.5" stroke-linejoin="round"></path>
-          <path d="M15.5 75.7 H88.3" stroke="#48484e" stroke-width="1.5" stroke-linecap="round"></path>
-          <path d="M38 63.5 L44 57.5 M43.5 65 L49.5 59 M49 66.5 L55 60.5" stroke="#48484e" stroke-width="0.75" stroke-linecap="round" opacity="0.5"></path>
-          <path d="M22 60.5 Q19.5 65 19.5 70" stroke="#48484e" stroke-width="0.75" stroke-linecap="round" opacity="0.4"></path>
-          <path d="M74 70.5 Q79 71.6 82.5 74.5" stroke="#48484e" stroke-width="0.75" stroke-linecap="round" opacity="0.4"></path>
-        </svg>
-      </div></div>
-          </div>
-          <div class="min-w-0 flex-1">
-            <div class="truncate text-[11px] uppercase tracking-[0.18em] font-black text-zinc-600" title="Osklen Low Top Suede">Osklen Low Top Suede</div>
-            <div class="mt-1 text-[10px] uppercase tracking-[0.18em] text-slate-400 font-bold">Sneaker</div>
-          </div>
-        </div>
-      </button><button type="button" data-role="picker-item" data-slot="shoe" data-id="g66" aria-pressed="false" title="Thursday Encore Low Top Leather" class="w-full rounded-2xl border p-3 text-left transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 bg-white border-slate-200 hover:border-slate-300 opacity-25 hover:opacity-100 grayscale hover:grayscale-0">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-center shrink-0 overflow-hidden">
-            <div class="w-8 h-8"><div class="w-full h-full" aria-label="Thursday Encore Low Top Leather">
-        <svg viewBox="0 0 100 100" class="w-full h-full" fill="none" aria-hidden="true">
-          <path d="M15.5 77 Q15.5 80 18.5 80 H84.5 Q88.5 80 88.5 76.2 Q88.5 70.8 82.2 69 L65.5 64.2 Q62.3 63.3 59.7 61.1 L50.5 53.4 Q48.3 51.6 45.5 52.3 L21.5 58.3 Q15.5 59.8 15.5 66 Z" fill="#f8fafc" stroke="#9fa0a1" stroke-width="1.5" stroke-linejoin="round"></path>
-          <path d="M15.5 75.7 H88.3" stroke="#9fa0a1" stroke-width="1.5" stroke-linecap="round"></path>
-          <path d="M38 63.5 L44 57.5 M43.5 65 L49.5 59 M49 66.5 L55 60.5" stroke="#9fa0a1" stroke-width="0.75" stroke-linecap="round" opacity="0.5"></path>
-          <path d="M22 60.5 Q19.5 65 19.5 70" stroke="#9fa0a1" stroke-width="0.75" stroke-linecap="round" opacity="0.4"></path>
-          <path d="M74 70.5 Q79 71.6 82.5 74.5" stroke="#9fa0a1" stroke-width="0.75" stroke-linecap="round" opacity="0.4"></path>
-        </svg>
-      </div></div>
-          </div>
-          <div class="min-w-0 flex-1">
-            <div class="truncate text-[11px] uppercase tracking-[0.18em] font-black text-zinc-600" title="Thursday Encore Low Top Leather">Thursday Encore Low Top Leather</div>
-            <div class="mt-1 text-[10px] uppercase tracking-[0.18em] text-slate-400 font-bold">Sneaker</div>
-          </div>
-        </div>
-      </button><button type="button" data-role="picker-item" data-slot="shoe" data-id="g67" aria-pressed="false" title="Thursday Premier High Top Leather" class="w-full rounded-2xl border p-3 text-left transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 bg-white border-slate-200 hover:border-slate-300 opacity-100">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-center shrink-0 overflow-hidden">
-            <div class="w-8 h-8"><div class="w-full h-full" aria-label="Thursday Premier High Top Leather">
-        <svg viewBox="0 0 100 100" class="w-full h-full" fill="none" aria-hidden="true">
-          <path d="M15.5 77 Q15.5 80 18.5 80 H84.5 Q88.5 80 88.5 76.2 Q88.5 70.8 82.2 69 L65.5 64.2 Q62.3 63.3 59.7 61.1 L50.5 53.4 Q48.3 51.6 45.5 52.3 L21.5 58.3 Q15.5 59.8 15.5 66 Z" fill="#18181b" stroke="#79797b" stroke-width="1.5" stroke-linejoin="round"></path>
-          <path d="M15.5 75.7 H88.3" stroke="#79797b" stroke-width="1.5" stroke-linecap="round"></path>
-          <path d="M38 63.5 L44 57.5 M43.5 65 L49.5 59 M49 66.5 L55 60.5" stroke="#79797b" stroke-width="0.75" stroke-linecap="round" opacity="0.5"></path>
-          <path d="M22 60.5 Q19.5 65 19.5 70" stroke="#79797b" stroke-width="0.75" stroke-linecap="round" opacity="0.4"></path>
-          <path d="M74 70.5 Q79 71.6 82.5 74.5" stroke="#79797b" stroke-width="0.75" stroke-linecap="round" opacity="0.4"></path>
-        </svg>
-      </div></div>
-          </div>
-          <div class="min-w-0 flex-1">
-            <div class="truncate text-[11px] uppercase tracking-[0.18em] font-black text-zinc-600" title="Thursday Premier High Top Leather">Thursday Premier High Top Leather</div>
-            <div class="mt-1 text-[10px] uppercase tracking-[0.18em] text-slate-400 font-bold">Sneaker</div>
-          </div>
-        </div>
-      </button><button type="button" data-role="picker-item" data-slot="shoe" data-id="g68" aria-pressed="false" title="Vans High Top Suede" class="w-full rounded-2xl border p-3 text-left transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300 bg-white border-slate-200 hover:border-slate-300 opacity-25 hover:opacity-100 grayscale hover:grayscale-0">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-center shrink-0 overflow-hidden">
-            <div class="w-8 h-8"><div class="w-full h-full" aria-label="Vans High Top Suede">
-        <svg viewBox="0 0 100 100" class="w-full h-full" fill="none" aria-hidden="true">
-          <path d="M15.5 77 Q15.5 80 18.5 80 H84.5 Q88.5 80 88.5 76.2 Q88.5 70.8 82.2 69 L65.5 64.2 Q62.3 63.3 59.7 61.1 L50.5 53.4 Q48.3 51.6 45.5 52.3 L21.5 58.3 Q15.5 59.8 15.5 66 Z" fill="#18181b" stroke="#79797b" stroke-width="1.5" stroke-linejoin="round"></path>
-          <path d="M15.5 75.7 H88.3" stroke="#79797b" stroke-width="1.5" stroke-linecap="round"></path>
-          <path d="M38 63.5 L44 57.5 M43.5 65 L49.5 59 M49 66.5 L55 60.5" stroke="#79797b" stroke-width="0.75" stroke-linecap="round" opacity="0.5"></path>
-          <path d="M22 60.5 Q19.5 65 19.5 70" stroke="#79797b" stroke-width="0.75" stroke-linecap="round" opacity="0.4"></path>
-          <path d="M74 70.5 Q79 71.6 82.5 74.5" stroke="#79797b" stroke-width="0.75" stroke-linecap="round" opacity="0.4"></path>
-        </svg>
-      </div></div>
-          </div>
-          <div class="min-w-0 flex-1">
-            <div class="truncate text-[11px] uppercase tracking-[0.18em] font-black text-zinc-600" title="Vans High Top Suede">Vans High Top Suede</div>
-            <div class="mt-1 text-[10px] uppercase tracking-[0.18em] text-slate-400 font-bold">Sneaker</div>
-          </div>
-        </div>
-      </button></div></div></div>
+      </button></div></div>
             </div>
           </div>
         </section>
@@ -867,7 +577,7 @@
       </div>
     </section>
 
-    <section id="tab-content-closet" class="" role="tabpanel" aria-labelledby="tab-btn-closet" data-om-id="d732bfa4:686">
+    <section id="tab-content-closet" class="hidden" role="tabpanel" aria-labelledby="tab-btn-closet" data-om-id="d732bfa4:686">
       <div class="rounded-3xl border border-slate-200 bg-white p-5 sm:p-6 soft-shadow" data-om-id="d732bfa4:687">
         <div class="flex flex-col xl:flex-row xl:items-start xl:justify-between gap-5" data-om-id="d732bfa4:688">
           <div class="min-w-0 flex-1" data-om-id="d732bfa4:689">
@@ -13684,6 +13394,7 @@ function sortGarmentsAlphabetically(garments) {
         "Wool / Merino": 28,
         "Linen / Hemp": 24,
         "Leather / Suede": 29,
+        Cashmere: 29,
         Synthetic: 14,
         Other: 17,
       };
